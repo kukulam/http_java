@@ -11,6 +11,7 @@ public class CharactersRestService {
         RestTemplate restTemplate = new RestTemplate();
         String url = "https://www.anapioficeandfire.com/api/characters";
         ResponseEntity<String> response = restTemplate.getForEntity(url, String.class);
+        System.out.println(response.getHeaders());
         return new HTTPResponse(response.getBody(), response.getStatusCode().value());
     }
 
